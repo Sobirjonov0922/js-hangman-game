@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'OpenSans', sans-serif;
+}
+
+body {
+  padding: 0 10px;
+  min-height: 100vh;
+  background: #5e63ba;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  border-radius: 10px;
+  padding: 60px 40px;
+  max-width: 850px;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  align-items: flex-end;
+  gap: 70px;
+}
+
+.game-modal {
+  padding: 0 10px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 999;
+  pointer-events: none;
+  transition: all .5s;
+}
+
+.game-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.game-modal__content {
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 420px;
+  width: 100%;
+  background: #fff;
+  text-align: center;
+}
+
+.game-modal__img {
+  margin-bottom: 20px;
+  max-width: 130px;
+  width: 100%;
+}
+
+.game-modal__title {
+  font-size: 1.53rem;
+}
+
+.game-modal__txt {
+  margin: 16px 0 32px;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.game-modal__txt b {
+  color: #5e63ba;
+}
+
+.game-modal__play {
+  padding: 12px 24px;
+}
+
+:where(.game-modal__play, .game-box__keyboard button) {
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  color: #fff;
+  background: #5e63ba;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all .5s;
+}
+
+:where(.game-modal__play:hover, .game-box__keyboard button:hover) {
+  background: #8286c9;
+}
+
+/* Hangman Box Start */
+.hangman-box__img {
+  max-width: 270px;
+}
+
+.hangman-box__title {
+  margin-top: 20px;
+  font-size: 1.45rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.game-box__word-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+}
+
+.game-box__word-letter {
+  border-bottom: 3px solid #000;
+  margin-bottom: 40px;
+  width: 28px;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.game-box__word-letter.guessed {
+  border-color: transparent;
+  margin: -40px 0 35px;
+}
+
+.game-box__hint,
+.game-box__guesses {
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.game-box__guesses b {
+  color: #ff0000;
+}
+
+.game-box__keyboard {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.game-box__keyboard button {
+  padding: 6px;
+  width: calc(100% / 9 - 6px);
+}
+
+.game-box__keyboard button:disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+/* Hangman Box End */
+
+/* Responsive Start */
+@media (max-width: 768px) {
+  .container {
+    padding: 32px 16px;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .hangman-box__img {
+    max-width: 200px;
+  }
+
+  .hangman-box__title {
+    display: none;
+  }
+}
+/* Responsive End */

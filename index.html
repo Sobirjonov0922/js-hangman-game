@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hangman Game</title>
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/word-list.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+
+<body>
+
+  <div class="game-modal">
+    <div class="game-modal__content">
+      <img src="images/" alt="Lost" class="game-modal__img">
+      <h4 class="game-modal__title"></h4>
+      <p class="game-modal__txt">  <b></b></p>
+      <button class="game-modal__play">Play Again</button>
+    </div>
+  </div>
+  <div class="container">
+    <div class="hangman-box">
+      <img src="images/hangman-0.svg" alt="hangman-img" class="hangman-box__img">
+      <h1 class="hangman-box__title">Hangman Game</h1>
+    </div>
+    <div class="game-box">
+      <ul class="game-box__word-display"></ul>
+      <h3 class="game-box__hint">
+        Hint:
+        <b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, excepturi.</b>
+      </h3>
+      <h3 class="game-box__guesses">
+        Incorrect guesses:
+        <b>0 / 6</b>
+      </h3>
+      <div class="game-box__keyboard"></div>
+    </div>
+  </div>
+
+</body>
+
+</html>
